@@ -9,8 +9,8 @@ int main(int argc, char const *argv[])
     time_t t1 ;
 
     srand(time(NULL)) ;
-    a = (double *) malloc((N+1)*sizeof(double)) ;       // 計算乘法
-    b = (double *) malloc((N)*sizeof(double)) ;         // 紀錄結果
+    a = (double *) malloc((N+1)*sizeof(double)) ;       // Compute FLOPS
+    b = (double *) malloc((N)*sizeof(double)) ;         // Save the results
     for (i=0;i<N+1;i++){
         a[i] = 1.0*rand()/RAND_MAX ;
     }
@@ -18,19 +18,19 @@ int main(int argc, char const *argv[])
         b[i] = 0 ;
     }
 
-    // 開始計算乘法
+    // Start computing multiplication
     t1 = clock() ;
     for(i=0;i<N;i++){
         b[i] = a[i] * a[i+1] ;
     }
     t1 = clock() - t1 ;
     
-    // 輸出計算時間與結果
+    // Output the time and some results
     for(i=N-10;i<N;i++){
-        printf("no.%d : %f * %f = %f\n",i,a[i],a[i+1],b[i]) ;   // 輸出最後十次計算結果
+        printf("no.%d : %f * %f = %f\n",i,a[i],a[i+1],b[i]) ;   // output the last 10 results
     }
-    printf("計算 %d 次浮點數乘法總耗時 %d ms\n",N,t1) ;
-    printf("平均計算一次浮點數乘法所需時間為 %f ms",(double)t1 / (double)N) ;
+    printf("Computing %d times multiplication uses %d ms\n",N,t1) ;
+    printf("The average time is %e ms",(double)t1 / (double)N) ;
 
     free(a) ;
     free(b) ;
