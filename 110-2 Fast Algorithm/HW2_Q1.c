@@ -27,10 +27,13 @@ int main(int argc, char const *argv[])
     
     // 輸出計算時間與結果
     for(i=N-10;i<N;i++){
-        printf("no.%d : %f * %f = %f\n",i,a[i],a[i+1],b[i]) ;
+        printf("no.%d : %f * %f = %f\n",i,a[i],a[i+1],b[i]) ;   // 輸出最後十次計算結果
     }
     printf("計算 %d 次浮點數乘法總耗時 %d ms\n",N,t1) ;
     printf("平均計算一次浮點數乘法所需時間為 %f ms",(double)t1 / (double)N) ;
+
+    free(a) ;
+    free(b) ;
 
     return 0;
 }
