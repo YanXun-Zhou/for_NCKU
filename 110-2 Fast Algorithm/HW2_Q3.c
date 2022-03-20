@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     t = clock();
     for (i = 0; i < N; i++)
     {
-        m = rand() * rand() * 2 + 2;
-        n = rand() * rand() * 2 + 2;
+        m = rand() * rand() + 1;
+        n = rand() * rand() + 1;
         a = m;
         b = n;
         d = gcd(a, b);
@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
     t = clock();
     for (i = 0; i < N; i++)
     {
-        m = rand() * rand() * 2 + 2;
-        n = rand() * rand() * 2 + 2;
+        m = rand() * rand() + 1;
+        n = rand() * rand() + 1;
         a = m;
         b = n;
         while (a != 0 && b != 0)
@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
     t = clock();
     for (i = 0; i < N; i++)
     {
-        m = rand() * rand() * 2 + 2;
-        n = rand() * rand() * 2 + 2;
+        m = rand() * rand() + 1;
+        n = rand() * rand() + 1;
         a = m;
         b = n;
         d = 1;
@@ -116,8 +116,8 @@ int main(int argc, char *argv[])
     t = clock();
     for (i = 0; i < N; i++)
     {
-        m = rand() * rand() * 2 + 2;
-        n = rand() * rand() * 2 + 2;
+        m = rand() * rand() + 1;
+        n = rand() * rand() + 1;
         a = m;
         b = n;
         d = 1; // d = d1 * d2 * gcd(a/d1/d2 , b/d1/d2) ;
