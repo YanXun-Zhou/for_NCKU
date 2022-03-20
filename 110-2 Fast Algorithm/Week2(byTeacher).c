@@ -27,7 +27,6 @@ int main() {
 		printf("%08X ", *(n+k));
 	}
 	printf("\n");
-	system("pause") ;
 	
 	return 0;
 }
