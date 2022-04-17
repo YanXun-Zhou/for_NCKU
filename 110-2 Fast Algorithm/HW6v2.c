@@ -107,30 +107,28 @@ int FFT2(double complex *X, int Log2_N)
         }
 
         // Display Data
-        for (k = 0 ; k < N ; k++)
-        {
-            printf("%d,%f\n",k,creal(X[k])) ;
-        }
+        // for (k = 0 ; k < N ; k++)
+        // {
+        //     printf("%d,%f\n",k,creal(X[k])) ;
+        // }
 
         // Do FFT2
-        for (i = 0; i < Log2_N; i++)
+        for (i = 0, temp = 1; i < Log2_N; i++, temp <<= 1)
         {
-            temp = 1 << i;
-            if (i > 0)
-            {
-                W_N = cexp(-2 * M_PI * I / (temp << 1));
-            }
-            for (j = 0; j < temp; j++)
+            //temp = 1 << i;
+            W_N = cexp(-2 * M_PI * I / (temp << 1));
+            
+            for (j = 0, W_N_j = 1; j < temp; j++, W_N_j *= W_N)
             {
                 // Compute W_N_j
-                if (j == 1)
-                {
-                    W_N_j = W_N;
-                }
-                else if (j > 1)
-                {
-                    W_N_j *= W_N;
-                }
+                // if (j == 1)
+                // {
+                //     W_N_j = W_N;
+                // }
+                // else if (j > 1)
+                // {
+                //     W_N_j *= W_N;
+                // }
                 
                 for (k = 0; k < N; k += (temp << 1))
                 {
