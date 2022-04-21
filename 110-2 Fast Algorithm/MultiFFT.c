@@ -106,6 +106,10 @@ int FFT235(double complex *X, int N)
         }
         MaxLayer += Digit[i] ;
     }
+    if(Np[0] * Np[1] * Np[2] != N)
+    {
+        printf("error: N is not of the form 2^p * 3^q * 5^r") ;
+    }
 
     
     // Setting W_N
