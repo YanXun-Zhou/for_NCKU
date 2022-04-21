@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     char ch;
     FILE *Input;
     
-    Input = fopen("hw6.csv", "r");
+    Input = fopen("hw6_test.csv", "r");
     while (!feof(Input))
     {
         ch = fgetc(Input);
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     double complex *X;
     X = (double complex *)malloc(N * sizeof(double complex));
 
-    Input = fopen("hw6.csv", "r");
+    Input = fopen("hw6_test.csv", "r");
     for (n = 0; n < N; n++)
     {
         fscanf(Input, "%d,%d", &temp1, &temp2);
