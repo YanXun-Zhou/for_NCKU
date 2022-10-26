@@ -161,8 +161,6 @@ int main(){
     init();
     get();
     work();
-    printf("\n%d\n", powmod(2,3,5)) ;
-    system("pause") ;
     //while( 1 ) ;
    return 0;
 }
